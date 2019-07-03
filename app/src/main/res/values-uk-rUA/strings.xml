@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">Замовлення кави.</string>
+    <string name="order">Замовлення</string>
+    <string name="quantity">Кількість</string>
+    <string name="price">Ціна</string>
+    <string name="name">Ім\'я</string>
+    <string name="toppings">Топінг</string>
+    <string name="whipped_cream">Збиті вершки</string>
+    <string name="chocolate">Шоколад</string>
+    <string name="order_summary_name">Ім\'я: <ns1:g example="Friend" id="name">%s</ns1:g></string>
+    <string name="order_summary_whipped_cream">З вершками.
+        <ns1:g example="true" id="addWhippedCream" /></string>
+    <string name="order_summary_chocolate">З шоколадом.
+        <ns1:g example="true" id="addChocolate" /></string>
+    <string name="order_summary_quantity">Кількість:
+        <ns1:g example=" 0 " id="quantity">%d</ns1:g></string>
+    <string name="order_summary_price">Усього: <ns1:g example="$ 0 " id="price"> %s</ns1:g></string>
+    <string name="thank_you">Дякую!</string>
+    <string name="order_summary_email_subject">Замовлення кави для
+        <ns1:g example="Friend" id="name">%s</ns1:g></string>
+    <string name="Total">Усього: 0,00 грн.</string>
+    <string name="initial_quantity_value">0</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+</resources>
