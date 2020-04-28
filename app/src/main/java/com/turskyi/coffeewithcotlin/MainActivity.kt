@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CompoundButton
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.NumberFormat
 
@@ -58,7 +59,6 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
         // Send the order summary in the email body.
         val intent = Intent(
             Intent.ACTION_SENDTO, Uri.fromParts("mailto", "dmitriy.turskiy@gmail.com", ""))
-//        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_summary_email_subject, name))
         intent.putExtra(Intent.EXTRA_TEXT, message)
 
@@ -123,10 +123,11 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
      * This method displays the given quantity value on the screen.
      */
     private fun displayQuantity(numberOfCoffees: Int) {
-        quantity_text_view.text = """$numberOfCoffees"""
+        quantity_text_view.text = "$numberOfCoffees"
     }
 
     override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+        Toast.makeText(this, "here", Toast.LENGTH_LONG).show()
         displayPrice()
     }
 
