@@ -2,10 +2,10 @@ package com.turskyi.coffeewithcotlin
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CompoundButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.NumberFormat
 
@@ -65,6 +65,13 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }
+
+//        or like this:
+//        try {
+//            startActivity(intent)
+//        } catch (ex: ActivityNotFoundException) {
+//            Toast.makeText(this, "application not found", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     /**
@@ -76,7 +83,7 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
      * @param addChocolate    is whether or not to add chocolate to the coffee
      * @return text summary
      */
-    private fun createOrderSummary(name: String, price: Int, addWhippedCream: Boolean, addChocolate: Boolean): String? {
+    private fun createOrderSummary(name: String, price: Int, addWhippedCream: Boolean, addChocolate: Boolean): String {
         var priceMessage = getString(R.string.order_summary_name, name)
 
         priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity)
